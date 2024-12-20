@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-chemclipse') {
+orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
   settings+: {
     description: "",
     workflows+: {
