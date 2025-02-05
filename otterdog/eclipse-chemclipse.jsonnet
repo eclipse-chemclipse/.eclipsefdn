@@ -7,7 +7,18 @@ orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  webhooks+: [
+    orgs.newOrgWebhook('https://ci.eclipse.org/chemclipse/github-webhook/') {
+      content_type: "json",
+      events+: [
+        "pull_request",
+        "push"
+      ],
+    },
+  ],
   _repositories+:: [
+    orgs.newRepo('.github') {
+    },
     orgs.newRepo('chemclipse') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -33,10 +44,5 @@ orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
         },
       ],
     },
-  ],
-} + {
-  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
-  _repositories+:: [
-    orgs.newRepo('.github')
   ],
 }
