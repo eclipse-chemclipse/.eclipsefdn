@@ -25,7 +25,7 @@ orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
       default_branch: "develop",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      description: "ChemClipse Project",
+      description: "Analytical Chemistry GUI Toolbox",
       webhooks: [
         orgs.newRepoWebhook('https://chat.lablicate.com/plugins/github/webhook') {
           content_type: "json",
