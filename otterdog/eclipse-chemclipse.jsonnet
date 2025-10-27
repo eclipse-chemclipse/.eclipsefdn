@@ -16,6 +16,11 @@ orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
       ],
     },
   ],
+  secrets+: [
+    orgs.newOrgSecret('GITLAB_API_TOKEN') {
+      value: "pass:bots/science.chemclipse/gitlab.eclipse.org/api-token",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
     },
