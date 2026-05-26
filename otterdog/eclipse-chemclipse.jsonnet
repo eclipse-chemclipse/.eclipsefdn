@@ -15,6 +15,12 @@ orgs.newOrg('science.chemclipse', 'eclipse-chemclipse') {
         "push"
       ],
     },
+    orgs.newOrgWebhook('https://build.lablicate.com/github-webhook/') {
+      content_type: "json",
+      events+: [
+        "push"
+      ],
+    },
   ],
   secrets+: [
     orgs.newOrgSecret('GITLAB_API_TOKEN') {
